@@ -19,8 +19,8 @@ from django.urls import include, re_path
 from django.conf.urls.static import static
 
 urlpatterns = [
-    re_path(r'^$', include('calc.urls')),
-    re_path('admin/', admin.site.urls),
+    re_path(r'^', include('calc.urls')),
+    re_path(r'^admin/', admin.site.urls),
 ]
-# urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

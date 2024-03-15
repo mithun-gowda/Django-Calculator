@@ -27,7 +27,7 @@ SECRET_KEY = 'esw#4jd1o2=w#f83_n!%e%)xncniao#$we@3!1)-6!_gp@*y&('
 DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
-ALLOWED_HOSTS = ['.vercel.app']
+# ALLOWED_HOSTS = ['.vercel.app']
 # ALLOWED_HOSTS = []
 
 
@@ -77,24 +77,24 @@ WSGI_APPLICATION = 'Calculator.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-#vercel doesnot support sqlite which is default database for django framework
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'PQrbEaMsfeVdzeZVUfmpMXescspRfFYt',
-#         'HOST': 'roundhouse.proxy.rlwy.net',
-#         'PORT': '45236',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+#vercel doesnot support sqlite which is default database for django framework
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ZZTiHxWDXBjMaZrMBuwBdhWEYkNqYfuA',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '26277',
+    }
+}
 
 
 # Password validation
@@ -134,8 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
-# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
